@@ -15,5 +15,10 @@ To enhance speed of continuous scraper by managing lambda container resource.
 - Scraper lambda container to *pass* a request for scraping if its using an *avoidable IP*
 
 ### Instructions
-- ```cd project-cheetah```
-- ```python3 -m venv venv```
+- Please run the follow steps in terminal.
+```
+    cd project-cheetah
+    python3 -m venv venv
+    source venv/bin/activate
+    python driver.py {count of iterations}
+```
