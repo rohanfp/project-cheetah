@@ -4,3 +4,4 @@ python source/simulator.py 'data/scraper_status.json' 'data/cheetah_status_OFF.j
 echo "Delaying simulator by $1 seconds..."
 sleep $1
 python source/simulator.py 'data/scraper_status.json' 'data/cheetah_status_ON.json' 'ON'
+echo "Simulation data has been saved inside of ./data/"
