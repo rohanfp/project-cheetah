@@ -155,3 +155,6 @@ serverless_sdk/
 
 # python-requirements
 s_*.py
+
+# data
+data/
