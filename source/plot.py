@@ -4,29 +4,38 @@ import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 
-competitor_name = sys.argv[1]
+cheetah_output = json.load(open('data/cheetah_output.json'))
+ip_address_counts = {}
 
-cheetah_status_off = json.load(open('data/cheetah_status_OFF.json'))[competitor_name]
-cheetah_status_on = json.load(open('data/cheetah_status_ON.json'))[competitor_name]
+for i in range(len(cheetah_output)):
+    competitor_name, ip_address = cheetah_output[i].split(",")
+    if competitor_name not in ip_address_counts:
+        ip_address_counts[competitor_name] = {}
+    if ip_address not in ip_address_counts[competitor_name]:
+        ip_address_counts[competitor_name][ip_address] = 1
+    ip_address_counts[competitor_name][ip_address] += 1
 
-ip_address_list = list(cheetah_status_off)
-cheetah_status_off_ip_address_executions = [len(cheetah_status_off[ip_address]) for ip_address in ip_address_list]
-cheetah_status_on_ip_address_executions = [len(cheetah_status_on[ip_address]) for ip_address in ip_address_list]
+competitor_name_list = list(ip_address_counts)
 
-x = np.arange(len(ip_address_list))
-width = 0.25
 
-fig, ax = plt.subplots()
-rects1 = ax.bar(x - width/2, cheetah_status_off_ip_address_executions, width, label='OFF')
-rects2 = ax.bar(x + width/2, cheetah_status_on_ip_address_executions, width, label='ON')
+for competitor_name in competitor_name_list:
+    ip_address_list = list(ip_address_counts[competitor_name])
+    ip_address_execution_count_list = list(ip_address_counts[competitor_name].values())
+    
+    x = np.arange(len(ip_address_list))
+    width = 0.25
 
-ax.set_ylabel('Executions')
-ax.set_title('Scores by Execution and IP address')
-ax.set_xticks(x)
-ax.set_xticklabels(x)
-ax.set_xlabel('IP Address')
-ax.legend()
+    fig, ax = plt.subplots()
+    rects1 = ax.bar(x, ip_address_execution_count_list, width, label='Execution counts')
 
-fig.tight_layout()
+    ax.set_ylabel('Executions')
+    ax.set_title('Execution v/s IP address')
+    ax.set_xticks(x)
+    ax.set_xticklabels(ip_address_list)
+    ax.set_xlabel('IP Address')
+    ax.legend()
 
-plt.savefig(f'data/{competitor_name}.png')
+    fig.tight_layout()
+    
+    plt.xticks(rotation = (45), fontsize = 10, ha='center')
+    plt.savefig(f'data/{competitor_name}.png', bbox_inches='tight', dpi=300)
