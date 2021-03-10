@@ -27,5 +27,5 @@ To enhance speed of continuous scraper by managing lambda container resource.
     python3 -m venv venv
     source venv/bin/activate
     pip install -r requirements.txt
-    bash simulate.sh 30
+    bash simulate.sh
 ```
