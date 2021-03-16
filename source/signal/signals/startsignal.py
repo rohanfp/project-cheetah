@@ -3,7 +3,7 @@ from .signal import Signal
 
 class StartSignal(Signal):
     def perform(self):
-        print(self.signal_name)
+        pass
 
     def log(self):
-        pass
+        return f"{self.signal_name}_{self.service_name}_{self.ip_address}_{self.timestamp}"

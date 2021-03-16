@@ -1,5 +1,6 @@
 import time
 
+
 class Signal:
     def __init__(self, signal_name, service_name, ip_address):
         self.signal_name = signal_name.upper()
