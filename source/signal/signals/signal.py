@@ -1,4 +1,5 @@
 import time
+from dotenv import load_dotenv
 
 
 class Signal:
@@ -7,6 +8,7 @@ class Signal:
         self.service_name = service_name.lower()
         self.ip_address = ip_address
         self.timestamp = time.time()
+        load_dotenv(dotenv_path='../../.env')
 
     def perform(self):
         pass
