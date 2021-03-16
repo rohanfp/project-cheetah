@@ -19,8 +19,11 @@ To enhance speed of continuous scraper by managing lambda container resource.
 - Scraper lambda container to update status feed each time a request to competitor API is made
 - Scraper lambda container to *pass* a request for scraping if its using an *avoidable IP*
 
+### Design Pattern
+- Signal component utilizes factory design pattern
+- Recommendation component utilizes chain of responsiblity design patter (WIP)
 
-### Instructions
+<!-- ### Instructions
 - Please run the following steps in terminal.
 ```
     cd project-cheetah
@@ -28,4 +31,4 @@ To enhance speed of continuous scraper by managing lambda container resource.
     source venv/bin/activate
     pip install -r requirements.txt
     bash simulate.sh
-```
+``` -->
