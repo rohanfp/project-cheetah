@@ -1,0 +1,19 @@
+{
+    "ip_level_status": {
+        "A": {
+            "127.0.0.1": []
+        }
+    },
+    "service_level_status": {
+        "A": {
+            "grab": {
+                "127.0.0.1": {
+                    "start_timestamp": "1616559172.3017442",
+                    "end_timestamp": "1616559172.3017442",
+                    "scrape_time_average": 0,
+                    "execution_count": 1
+                }
+            }
+        }
+    }
+}
