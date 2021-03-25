@@ -1,7 +1,7 @@
 from .translators import *
 
 
-class TranslatorFactory:
+class TranslatorsFactory:
     @staticmethod
     def create_translator(channel_name):
         module_name = f'{channel_name.lower()}translator'

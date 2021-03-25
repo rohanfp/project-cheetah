@@ -1,10 +1,10 @@
-from .translator.translatorfactory import TranslatorFactory
+from .translator.translatorsfactory import TranslatorsFactory
 
 import os
 
 def translate_message(event, context):
     # Universal message format translator to keep cheetah aws service agnostic
-    translator = TranslatorFactory().create_translator(channel_name=os.getenv("CHANNEL_NAME"))
+    translator = TranslatorsFactory().create_translator(channel_name=os.getenv("CHANNEL_NAME"))
     translated_message = translator.translate(event)
     cheetah(**translated_message)
     return translated_message
