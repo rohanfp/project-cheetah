@@ -6,6 +6,10 @@ import json
 class Signal:
     def __init__(self, signal_name):
         self.signal_name = signal_name.upper()
+        self.scraper_type = None
+        self.ip_address = None
+        self.service_name = None
+        self.timestamp = None
 
     def perform(self, ip_address, scraper_type, service_name=None, timestamp=None):
         self.ip_address = ip_address
