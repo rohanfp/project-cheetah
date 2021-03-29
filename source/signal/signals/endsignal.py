@@ -21,7 +21,8 @@ class EndSignal(Signal):
                     'scraper_type': self.scraper_type,
                     'ip_address': item['ip_address']
                 }
-                to_restrict_list = self.get_data(ip_level_table_name, filter_conditions)['to_restrict_list']
+                to_restrict_list = self.get_data(ip_level_table_name, filter_conditions)
+                to_restrict_list = to_restrict_list[0]['to_restrict_list']
                 to_restrict_list.remove(self.service_name)
                 ip_level_status_data = {
                     'scraper_type': self.scraper_type,
