@@ -1,9 +1,11 @@
 from .rule import Rule
 
-from random import choice
+
+from random import choices
 
 
 class RandomIpRule(Rule):
     def handler(self, data=None):
-        data['result'] = choice(data['result'])
-        super().handler(data)
+        weights = [len(data['result']) - i for i in range(len(data['result']))]
+        data['result'] = choices(data['result'], weights=weights, k=1)
+        return super().handler(data)

@@ -1,0 +1,53 @@
+{
+    "ip_level_status": [
+        {
+            "scraper_type": "A",
+            "ip_address": "127.0.0.1",
+            "to_restrict_list": [
+                "grab",
+                "ubereats",
+                "airasia"
+            ]
+        },
+        {
+            "scraper_type": "A",
+            "ip_address": "192.128.0.0",
+            "to_restrict_list": [
+                "ubereats",
+                "airasia"
+            ]
+        },
+        {
+            "scraper_type": "A",
+            "ip_address": "127.0.0.0",
+            "to_restrict_list": [
+                "airasia"
+            ]
+        }
+    ],
+    "service_level_status": [
+        {
+            "scraper_type": "A",
+            "service_name": "grab",
+            "ip_address": "192.128.0.0",
+            "latest_start_timestamp": "1617153000.526942",
+            "latest_end_timestamp": "1617153008.750006",
+            "average_execution_time": 0,
+            "execution_count": 1
+        },
+        {
+            "scraper_type": "A",
+            "service_name": "grab",
+            "ip_address": "127.0.0.0",
+            "latest_start_timestamp": "1617153014.133892",
+            "latest_end_timestamp": "1617153019.228431",
+            "average_execution_time": 0,
+            "execution_count": 1
+        }
+    ],
+    "service_name": "grab",
+    "result": [
+        "192.128.0.0",
+        "127.0.0.0"
+    ]
+}

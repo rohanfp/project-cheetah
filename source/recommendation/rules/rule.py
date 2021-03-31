@@ -2,8 +2,10 @@ class Rule:
     def __init__(self):
         self.next_handler = None
 
-    def set_next(self, rule):
+
+    def set_next(self, rule=None):
         self.next_handler = rule
+
 
     def handler(self, data=None):
         if self.next_handler:
