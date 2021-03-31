@@ -2,6 +2,7 @@ from .translator.translatorsfactory import TranslatorsFactory
 
 import os
 
+
 def translate_message(event, context):
     # Universal message format translator to keep cheetah aws service agnostic
     translator = TranslatorsFactory().create_translator(channel_name=os.getenv("CHANNEL_NAME"))
